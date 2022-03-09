@@ -39,11 +39,12 @@ function LevenshteinAufgabe4() {
     const [output, setOutput] = useState("")
 
     function buttonhandler() {
-        let strings = textarea.split(" ")
+        let strings = textarea.split(", ")
         let distances = levenshteinDistance(input, strings)
         if (distances <= maxDistance){
             setOutput(strings)
         }
+        
     }
 
     return (
