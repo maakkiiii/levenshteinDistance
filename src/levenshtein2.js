@@ -34,12 +34,16 @@ function LevenshteinAufgabe4() {
         "a large language ocean. A small river named Duden flows by their place and supplies it with the necessary\n" +
         "regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.\n" +
         "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life\n" +
-        "One day however a small line of blind text by the name of Lorem Ipsum decided to die."
+        "One day however a small line of blind text by the name of Lorem Ipsum decided to die ."
     )
     const [output, setOutput] = useState("")
 
     function buttonhandler() {
-
+        let strings = textarea.split(" ")
+        let distances = levenshteinDistance(input, strings)
+        if (distances <= maxDistance){
+            setOutput(strings)
+        }
     }
 
     return (
@@ -70,8 +74,9 @@ function LevenshteinAufgabe4() {
             <div className={"felder"}>
                 <div className={"feld"}>
                     <h2>statistics</h2>
-                    <br/>
                     <p>Levenshtein Distance: {maxDistance}</p>
+                    <br/>
+                    {output}
                 </div>
             </div>
         </>
