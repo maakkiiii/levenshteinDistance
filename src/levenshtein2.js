@@ -26,12 +26,20 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
 
 function App() {
     const [input, setInput] = useState("")
-    const [input2, setInput2] = useState("")
+    const [maxDistance, setMaxDistance] = useState()
+    const [textarea, setTextarea] = useState
+    (
+        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,\n" +
+        "there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,\n" +
+        "a large language ocean. A small river named Duden flows by their place and supplies it with the necessary\n" +
+        "regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.\n" +
+        "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life\n" +
+        "One day however a small line of blind text by the name of Lorem Ipsum decided to die."
+    )
     const [output, setOutput] = useState("")
 
     function buttonhandler() {
-        let distance = levenshteinDistance(input, input2)
-        setOutput(distance)
+
     }
 
     return (
@@ -42,18 +50,27 @@ function App() {
                     <h2>Word 1</h2>
                     <input type={"text"} onChange={(event) => setInput(event.target.value)}></input>
                     <br/>
-                    <h2>Word 2</h2>
-                    <input type={"text"} onChange={(event) => setInput2(event.target.value)}></input>
+                    <h2>Distance</h2>
+                    <input type={"text"} onChange={(event) => setMaxDistance(event.target.value)}></input>
                     <br/>
                     <button onClick={buttonhandler}>calculate</button>
+                </div>
+                <div className={"feld"}>
+                    <h2>Textfeld</h2>
+                    <textarea title={"text field"}
+                              onChange={(event) => {
+                                  setTextArea(event.target.value)
+                                }
+                              }
+                              value={textarea}>
+                    </textarea>
                 </div>
             </div>
             <div className={"felder"}>
                 <div className={"feld"}>
-                    <h2>Infos</h2>
-                    distance
+                    <h2>statistics</h2>
                     <br/>
-                    {output}
+                    <p>Levenshtein Distance: {maxDistance}</p>
                 </div>
             </div>
         </>
