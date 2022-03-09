@@ -57,8 +57,6 @@ function App() {
                 </div>
             </div>
             <br/>
-            
-            <a href="levenshtein2.js">zu Aufgabe 4</a>
         </>
     );
 }

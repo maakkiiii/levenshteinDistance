@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LevenshteinAufgabe4 from "./levenshtein2";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+      <LevenshteinAufgabe4/>
   </React.StrictMode>,
   document.getElementById('root')
 );

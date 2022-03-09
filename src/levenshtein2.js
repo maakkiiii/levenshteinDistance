@@ -24,7 +24,7 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
     return track[str2.length][str1.length];
 }
 
-function App() {
+function LevenshteinAufgabe4() {
     const [input, setInput] = useState("")
     const [maxDistance, setMaxDistance] = useState()
     const [textarea, setTextarea] = useState
@@ -44,7 +44,8 @@ function App() {
 
     return (
         <>
-            <h1>Levenshtein Distance</h1>
+            <h1>=======================================================================================</h1>
+            <h1>Levenshtein Distance Aufgabe 4</h1>
             <div className={"felder"}>
                 <div className={"feld"}>
                     <h2>Word 1</h2>
@@ -59,7 +60,7 @@ function App() {
                     <h2>Textfeld</h2>
                     <textarea title={"text field"}
                               onChange={(event) => {
-                                  setTextArea(event.target.value)
+                                  setTextarea(event.target.value)
                                 }
                               }
                               value={textarea}>
@@ -77,4 +78,4 @@ function App() {
     );
 }
 
-export default App;
+export default LevenshteinAufgabe4;
